@@ -1,6 +1,22 @@
 def find_shortest_string(arr)
-  # type your code in here
+  idx = 0
+  min_length = arr[0].length
+
+  arr.each_with_index do |str, i|
+    if str.length < min_length
+      min_length = str.length
+      idx = i
+    end
+  end
+
+  arr[idx]
 end
+
+# Test the function
+input_array = ["apple", "banana", "kiwi", "orange"]
+shortest_string = find_shortest_string(input_array)
+puts shortest_string # Output: "kiwi"
+
 
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 'a'"
